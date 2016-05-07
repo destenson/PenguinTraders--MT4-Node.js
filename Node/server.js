@@ -3,8 +3,9 @@
 //Include the node.js modules that you need. Make sure you install them first with npm install
 var http = require("http");
 
-var _PORT = 8080; //Http port Node.js server will be listening on. Make sure that this is an open port and its the same as the one defined in MT4 indicator/EA.
-	
+// Server will be listening on port 8080 or the PORT environment variable if it is defined
+// PORT must match the port defined in the MT4 EA or indicator.
+this.PORT = process.env.PORT || 8080;
 
 //Create the server and listening to the request
 http.createServer(function onRequest(request, response) {
@@ -53,7 +54,7 @@ http.createServer(function onRequest(request, response) {
 
 	
 	
-}).listen(_PORT);
+}).listen(this.PORT);
 
-console.log("Node.js server listening on port "+ _PORT);
+console.log("Node.js server listening on port "+ this.PORT);
 
