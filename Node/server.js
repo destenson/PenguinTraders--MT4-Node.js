@@ -22,12 +22,10 @@ http.createServer(function onRequest(request, response) {
 		//setup the response
 		response.writeHead( 200, {"Content-Type": "text/plain"} );
 		
-		ms = content[0];
+		msg = content[0].toString();
 		
-		if(ms.toString() != "")
+		if(msg != "")
 		{
-			var msg = ms.toString();	//Parse the ms into string		
-			
 			console.log(msg); // Prints the message in the console
 			
 			var reqObj = JSON.parse(msg);	// If the incoming message is in JSON format, you can parse it as JSON.
