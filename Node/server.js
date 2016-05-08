@@ -5,7 +5,7 @@ var http = require("http");
 
 // Server will be listening on port 8080 or the PORT environment variable if it is defined
 // PORT must match the port defined in the MT4 EA or indicator.
-this.PORT = process.env.PORT || 8080;
+this.PORT = process.env.PORT || 8096;
 
 //Create the server and listening to the request
 http.createServer(function onRequest(request, response) {
